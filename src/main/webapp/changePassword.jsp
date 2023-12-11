@@ -1,0 +1,62 @@
+<%@page import=  "com.example.onlineshopping.config.ConnectionProvider" %>
+<%@page import= "java.sql.*" %>
+<%@include file= "changeDetailsHeader.jsp"%>
+<html>
+<head>
+<link rel="stylesheet" href="css/changeDetails.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<title>Message Us</title>
+</head>
+
+<body>
+<br><br><br>
+<br><br><br>
+<style>
+    .alert{
+        color: black;
+    }
+</style>
+<%
+String msg=request.getParameter("msg");
+if ("notMatch".equals(msg))
+{
+%>
+<h3 class="alert">New password and Confirm password does not match!</h3>
+<%}%>
+<%
+    if ("wrong".equals(msg))
+    {
+%>
+<h3 class="alert">Your old Password is wrong!</h3>
+<%}%>
+<%
+    if ("done".equals(msg))
+    {
+%>
+<h3 class="alert">Password change successfully!</h3>
+<%}%>
+<%
+    if ("invalid".equals(msg))
+    {
+%>
+<h3 class="alert">Some thing went wrong! Try again!</h3>
+<%}%>
+
+<form action="changePasswordAction.jsp" method="post" >
+<h3>Enter Old Password</h3>
+ <input class="input-style" type="text" name="oldPassword" placeholder="Enter Old Password" required>
+  <hr>
+ <h3>Enter New Password</h3>
+    <input class="input-style" type="text" name="newPassword" placeholder="Enter New Password" required>
+ <hr>
+<h3>Enter Confirm Password</h3>
+    <input class="input-style" type="text" name="confirmPassword" placeholder="Enter Confirm Password" required>
+<hr>
+    <button class="button" type="submit">Save <i class='far fa-arrow-alt-circle-right'></i></button>
+</form>
+
+</body>
+</html>
+<%@include file= "footer.jsp"%>
