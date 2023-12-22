@@ -25,13 +25,17 @@
                         </a>
                     </li>
                     <li class = "my-3">
-                        <a href = "about.jsp" class = "text-white text-decoration-none text-muted">
-                            <i class = "fas fa-chevron-right me-1"></i> About Us
+                        <a href = "services.jsp" class = "text-white text-decoration-none text-muted">
+                            <i class = "fas fa-chevron-right me-1"></i>Our Services
                         </a>
                     </li>
                 </ul>
             </div>
-
+            <style>
+                .fw-light{
+                    color: white;
+                }
+            </style>
             <div class = "col-md-6 col-lg-3">
                 <h5 class = "fw-light mb-3">Contact Us</h5>
                 <div class = "d-flex justify-content-start align-items-start my-2 text-muted">
